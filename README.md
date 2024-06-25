@@ -1,3 +1,91 @@
+# CHALLENGE CONVERTED TO MY NOTES
+
+- 1.5 hours
+- single page 
+- user enters name
+  - enter has to be pressed
+  - check if it is a "lucky name" list (via mock backend API: src\api\peopleApi.js)
+  - if name is not in list
+    - display "I'm sorry, {name} is not in today's list of lucky names." [OK]
+    - when click [OK] then they can search again
+  - if name IS in list
+    - display "Congratulations, {name} is a lucky name! You've won a prize. Will you accept it?" [Accept] [Reject]
+    - if Accept
+      - name is added to list of winners (on same page)
+      - input field is cleared
+    - if Reject
+      - name is NOT added
+      - input field remains as is
+- styling
+  - scoped Sass styling in Home.vue
+  - ElementPlus is also installed
+    - https://element-plus.org/en-US/component/overview.html
+    - e.g. <el-button type="primary">Primary Button</el-button>
+- extras
+  - validate input
+    - only letters
+    - no name smaller than 2 characters
+  - send random mock error from API
+    - deal with this gracefully on front end
+  - add page "Winners"
+    - shows same winners as on home page
+  - once prize is accepted
+    - don't allow it to win again
+    - if typed in, show "I'm sorry, prize has already been won for {name}!"
+  - persist all changed state in localstorage 
+  - make limit of 10 guesses per day
+    - enable user to "cheat" by clicking "next day" which changes the current day (displayed)
+    - make it not allowed to give a guess from any previous day
+  - refactor with TypeScript, Zod, Prettier, ESLint, make sure code is properly structured according to these tool's guidelines
+  - create TODO.md and answer following questions:
+    - plan an API an describe how you would implement it with
+      - authentication
+      - rate limiting 
+      - error handling
+      - API availability
+      - retry strategies, e.g.
+        - simply retry - 3 attempts then give up
+        - expoential backoff - 5 attempts, multiply wait by 2
+        - jitter - randomize the delay
+        - conditional retry - only retry on 500, 502, 503, 504
+        - circuit breaker - stop attempts if server is known to be down
+    - how would you a protect the app from being abused? e.g.
+      - implement a CAPTCHA to use the site
+      - rate limiting and throttling (see above)
+      - validation and sanitation
+      - secure storage policies
+      - use HTTPS
+      - monitoring and logging
+    - how to deploy in cloud environment
+    - how to make sure app is running with latest version of code? e.g.
+      - implement code versioning e.g. 1.0.0, 1.0.1
+      - tag released in GitHub
+    - how to ensure users are not disrupted when you make significant changes to code, e.g.
+      - set up a work flow that developers follow which involves creating task branches, pushing to repository, merging, etc.
+    - describe accessibility best practices for the site, e.g.
+      - semantic HTML is used
+      - ARIA roles and attributes
+      - keyboard navigation
+      - forms that use fieldset, legend, label, for
+      - color and contrast
+      - alt tags in images
+      - responsive design
+      - readability (make sure site works with larger fonts)
+      - mangage focus on site, e.g. avoid focus traps
+      - test site with screen readers
+    - how to structure css to optimize reusability but decrease leakage between components (unintended impact styles from one component have on another)
+      - Tailwind
+      - Sass (variables, structure)
+      - scoped-CSS or component encapsulation, e.g. in Vue
+      - BEM
+      - CSS modules (CSS files that are scoped by their names)
+      - styled-components
+      - atomic CSS (usability classes)
+      - CSS variables
+
+
+---
+
 # Challenge
 
 This challenge is divided between the main task an additional stretch goals. All of those stretch goals are optional, but we would love to see them implemented. It is expected that you should be able to finish the chellenge in about 1.5 hours. If you feel you are not able to implement everything on time, try instead describing how you solve the points you didn't finish.
