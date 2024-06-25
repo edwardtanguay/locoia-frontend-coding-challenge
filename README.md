@@ -86,7 +86,7 @@
 
 ---
 
-# Challenge
+# Challenge (original)
 
 This challenge is divided between the main task an additional stretch goals. All of those stretch goals are optional, but we would love to see them implemented. It is expected that you should be able to finish the chellenge in about 1.5 hours. If you feel you are not able to implement everything on time, try instead describing how you solve the points you didn't finish.
 
